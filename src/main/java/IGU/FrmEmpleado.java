@@ -23,10 +23,14 @@ import java.util.ArrayList;
 
 public class FrmEmpleado extends JFrame {
     private ArrayList<Empleado> listEmpleados = new ArrayList<>();
+    private DefaultTableModel modelo;
     public FrmEmpleado() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        String[] column = {"Nombre", "Edad", "Salario", "Bono"};
+        modelo = new DefaultTableModel(column, 0);
+        tabla.setModel(modelo);
     }
 
     private int Int(String txt){
