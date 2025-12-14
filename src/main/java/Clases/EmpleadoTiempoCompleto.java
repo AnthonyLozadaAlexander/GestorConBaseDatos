@@ -8,6 +8,9 @@ public class EmpleadoTiempoCompleto extends Empleado {
         this.bonoAnual = bonoAnual;
     }
 
+    public double getBonoAnual(){
+        return bonoAnual;
+    }
     public double calcularSalarioAnual() {
         return (salarioBase  + bonoAnual);
     }
