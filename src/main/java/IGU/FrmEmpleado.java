@@ -190,8 +190,12 @@ public class FrmEmpleado extends JFrame {
             return;
         }
 
-        String nom = listEmpleados.get(index).toString();
+        String nom = listEmpleados.get(index).getNombre().toString();
         listEmpleados.remove(index);
+
+        modelo.removeRow(index);
+        tabla.setModel(modelo);
+
         txtArea.append("Empleado eliminado: " + nom + "\n");
         txtArea.append("Total empleados: " + listEmpleados.size() + "\n");
     }
@@ -227,6 +231,10 @@ public class FrmEmpleado extends JFrame {
         txtEdad.setText(modelo.getValueAt(row, 1).toString());
         txtSalario.setText(modelo.getValueAt(row, 2).toString());
         txtBono.setText(modelo.getValueAt(row, 3).toString());
+    }
+
+    private void btnBuscar(ActionEvent e) {
+        buscar();
     }
 
     private void initComponents() {
@@ -322,6 +330,7 @@ public class FrmEmpleado extends JFrame {
         btnBuscar.setText("Buscar");
         btnBuscar.setFont(new Font("CaskaydiaMono NF SemiBold", Font.PLAIN, 18));
         btnBuscar.setName("btnBuscar");
+        btnBuscar.addActionListener(e -> btnBuscar(e));
 
         //---- label6 ----
         label6.setText("Gestor Empleados");
