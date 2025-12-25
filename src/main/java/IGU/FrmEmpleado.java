@@ -172,6 +172,15 @@ public class FrmEmpleado extends JFrame {
         mostrar();
     }
 
+    private void buscar(){
+        if(listEmpleados.isEmpty()){
+            JOptionPane.showMessageDialog(this, "La lista de empleados esta vacia", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String buscar = JOptionPane.showInputDialog(this, "Ingrese El Nombre Del Empleado A Buscar: ");
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Educational license - Daniel Sanchez (Anthony Lozada)
