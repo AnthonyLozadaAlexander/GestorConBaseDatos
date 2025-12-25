@@ -30,6 +30,10 @@ public class FrmEmpleado extends JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        configurarTabla();
+    }
+
+    private void configurarTabla(){
         String[] column = {"Nombre", "Edad", "Salario", "Bono", "Salario Mensual", "Salario Anual"};
         modelo = new DefaultTableModel(column, 0){
             @Override
